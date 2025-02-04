@@ -1,4 +1,3 @@
-
 import { HStack, Image } from '@chakra-ui/react'
 import moshicon from '../../assets/mosh-icon.png';
 import { Text } from '@chakra-ui/react';

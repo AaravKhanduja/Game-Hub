@@ -8,17 +8,17 @@ function App() {
   }) ?? `"nav" "main"`;  // Fallback to prevent 'undefined'
 
   return (
-    <Grid templateAreas={gridTemplate} gap={4}>
+    <Grid templateAreas={gridTemplate} gap={'10px'}>
       <GridItem area="nav" >
         <NavBar />
       </GridItem>
        
 
       {gridTemplate.includes("aside") && (
-        <GridItem area="aside" bg="gold">Aside</GridItem>
+        <GridItem area="aside">Aside</GridItem>
       )}
 
-      <GridItem area="main" bg="dodgerblue">
+      <GridItem area="main" >
       <GameGrid />
       </GridItem>
       

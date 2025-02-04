@@ -1,6 +1,8 @@
 import { Grid, GridItem, useBreakpointValue } from '@chakra-ui/react';
 import NavBar from './components/navbar/navbar';
 import GameGrid from './components/GameGrid';
+import SideBar from './components/SideBar';
+
 function App() {
   const gridTemplate = useBreakpointValue({
     base: `"nav" "main"`, 
@@ -15,7 +17,7 @@ function App() {
        
 
       {gridTemplate.includes("aside") && (
-        <GridItem area="aside">Aside</GridItem>
+        <GridItem area="aside"><SideBar/></GridItem>
       )}
 
       <GridItem area="main" >

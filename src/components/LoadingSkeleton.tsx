@@ -4,7 +4,7 @@ import { Card, CardBody, Heading } from '@chakra-ui/react';
 
 const LoadingSkeleton = () => {
   return (
-     <Card width= '300px' borderRadius="10px" overflow='hidden'>
+     <Card>
      <Skeleton height="200px" />
      <CardBody> 
      <SkeletonText /> 

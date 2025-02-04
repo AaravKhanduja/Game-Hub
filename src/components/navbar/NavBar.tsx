@@ -1,13 +1,14 @@
 import { HStack, Image } from '@chakra-ui/react'
 import moshicon from '../../assets/mosh-icon.png';
-import { Text } from '@chakra-ui/react';
+
+import ColorModeSwitch from '../ColorModeSwitch';
 
 
 const NavBar = () => {
   return (
-    <HStack>
+    <HStack justifyContent={"space-between"} p={'10px'}  >
         <Image src={moshicon} boxSize={"60px"} alt="logo" />
-        <Text>NavBar</Text>
+        <ColorModeSwitch />
     </HStack>
   )
 }

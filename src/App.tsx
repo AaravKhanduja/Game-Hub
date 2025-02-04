@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Grid templateAreas={gridTemplate} gap={4}>
-      <GridItem area="nav" bg="coral">
+      <GridItem area="nav" >
         <NavBar />
       </GridItem>
        

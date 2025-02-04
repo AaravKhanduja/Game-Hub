@@ -20,6 +20,7 @@ export interface Game {
             slug: string;
         }
     }[];
+    metacritic: number;
 
 }
 

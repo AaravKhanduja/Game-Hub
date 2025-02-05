@@ -4,6 +4,7 @@ import { ListItem } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
 import getCroppedImageUrl from '../services/image-url';
 import { Text } from '@chakra-ui/react';
+import { FaBold } from 'react-icons/fa';
 
 
 const SideBar = () => {
@@ -27,7 +28,7 @@ const SideBar = () => {
           boxSize={'32px'} 
           src={getCroppedImageUrl(genre.image_background)}
           />
-          <Text fontSize="large">{genre.name}</Text>
+          <Text fontWeight={500} fontSize="large">{genre.name}</Text>
         </HStack>
         
         </ListItem>

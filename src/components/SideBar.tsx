@@ -1,5 +1,5 @@
-import { HStack, List, Spinner } from '@chakra-ui/react';
-import useGenres from '../hooks/useGenres';
+import { Button, HStack, List, Spinner, textDecoration } from '@chakra-ui/react';
+import useGenres, { Genre } from '../hooks/useGenres';
 import { ListItem } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
 import getCroppedImageUrl from '../services/image-url';
@@ -7,7 +7,11 @@ import { Text } from '@chakra-ui/react';
 import { FaBold } from 'react-icons/fa';
 
 
-const SideBar = () => {
+ interface Props {
+          onSelectGenre: (genre: Genre) => void;
+     }
+
+const SideBar = ({ onSelectGenre} : Props) => {
   const { data, isLoading, error } = useGenres();
 
   if(error){
@@ -28,7 +32,7 @@ const SideBar = () => {
           boxSize={'32px'} 
           src={getCroppedImageUrl(genre.image_background)}
           />
-          <Text fontWeight={500} fontSize="large">{genre.name}</Text>
+          <Button onClick={()=>onSelectGenre(genre)} fontSize={'lg'} variant='link'>{genre.name}</Button>
         </HStack>
         
         </ListItem>

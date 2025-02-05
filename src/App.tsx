@@ -10,14 +10,19 @@ function App() {
   }) ?? `"nav" "main"`;  // Fallback to prevent 'undefined'
 
   return (
-    <Grid templateAreas={gridTemplate} gap={'10px'}>
+    <Grid templateAreas={gridTemplate}  
+      templateColumns={{
+        base: '1fr',
+        lg: '200px 1fr'
+        
+        }}>
       <GridItem area="nav" >
         <NavBar />
       </GridItem>
        
 
       {gridTemplate.includes("aside") && (
-        <GridItem area="aside"><SideBar/></GridItem>
+        <GridItem paddingX={5} area="aside"><SideBar/></GridItem>
       )}
 
       <GridItem area="main" >

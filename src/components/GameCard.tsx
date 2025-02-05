@@ -1,10 +1,7 @@
-import React, { useState } from 'react'
-import useGames from '../hooks/useGames'
 import { Game } from '../hooks/useGames'
 import { Card, CardBody, HStack } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
 import { Heading } from '@chakra-ui/react';
-import { Text } from '@chakra-ui/react';
 import PlatformIconList from './PlatformIconList';
 import CriticScore from './CriticScore';
 import getCroppedImageUrl from '../services/image-url';

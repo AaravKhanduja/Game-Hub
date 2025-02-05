@@ -1,6 +1,5 @@
-import React from 'react'
-import { Skeleton, SkeletonCircle, SkeletonText, Stack, HStack } from '@chakra-ui/react';
-import { Card, CardBody, Heading } from '@chakra-ui/react';
+import { Skeleton, SkeletonText } from '@chakra-ui/react';
+import { Card, CardBody } from '@chakra-ui/react';
 
 const LoadingSkeleton = () => {
   return (

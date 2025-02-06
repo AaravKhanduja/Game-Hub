@@ -12,9 +12,10 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({genre: null, platform: null, sortOrder: ''});
+  const [gameQuery, setGameQuery] = useState<GameQuery>({genre: null, platform: null, sortOrder: '', searchText: ''});
 
   const gridTemplate = useBreakpointValue({
     base: `"nav" "main"`, 
@@ -29,7 +30,7 @@ function App() {
         
         }}>
       <GridItem area="nav" >
-        <NavBar />
+        <NavBar onSearch={(searchText)=> setGameQuery({...gameQuery, searchText })} />
       </GridItem>
        
 

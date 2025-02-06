@@ -1,5 +1,7 @@
 import { GameQuery } from '../App';
 import useData from './useData';
+import {Filter} from 'bad-words';
+
 
 
 
@@ -23,17 +25,25 @@ export interface Game {
     metacritic: number;
 
 }
+const filter = new Filter();
 
+const nsfwWords = import.meta.env.VITE_NSFW_WORDS?.split(",") || [];
+filter.addWords(...nsfwWords);
  
 const useGames = (gameQuery: GameQuery) => {
-    return useData<Game>('/games', {
+    const { data, error, isLoading } = useData<Game>("/games", {
         params: {
-            genres: gameQuery.genre?.id, 
-            platforms: gameQuery.platform?.id,
-            ordering: gameQuery.sortOrder, 
-            search: gameQuery.searchText
-        }},
-            [gameQuery]) 
-}
+          genres: gameQuery.genre?.id,
+          platforms: gameQuery.platform?.id,
+          ordering: gameQuery.sortOrder,
+          search: gameQuery.searchText,
+        },
+      }, [gameQuery]);
 
-export default useGames
+      // Filter out NSFW game names
+  const filteredGames = data.filter(game => !filter.isProfane(game.name));
+
+  return { data: filteredGames, error, isLoading };
+};
+
+export default useGames; 

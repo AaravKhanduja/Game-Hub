@@ -1,4 +1,4 @@
-import genres from "../data/genres.ts";
+import genres from "../data/genres";
 
 
 export interface Genre {

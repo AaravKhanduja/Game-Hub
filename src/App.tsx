@@ -1,4 +1,4 @@
-import { Grid, GridItem, Heading, HStack, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Grid, GridItem, HStack, useBreakpointValue } from '@chakra-ui/react';
 import NavBar from './components/navbar/navbar';
 import GameGrid from './components/GameGrid';
 import SideBar from './components/SideBar';

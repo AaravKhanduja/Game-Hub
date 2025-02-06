@@ -1,8 +1,7 @@
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react"
-import { BsSearch } from "react-icons/bs"
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { BsSearch } from "react-icons/bs";
 
-import { useRef } from "react"
-import { on } from "events";
+import { useRef } from "react";
 
 interface Props {
      onSearch: (search: string) => void;
@@ -20,7 +19,7 @@ const SearchBar = ({onSearch}: Props) => {
      }}>
      <InputGroup>
      <InputLeftElement pointerEvents="none" children={<BsSearch />} />
-     <Input ref={ref} borderRadius={20} placeholder={"Search"} variant="filled" />
+     <Input ref={ref} borderRadius={20} placeholder={"Search games..."} variant="filled" />
      </InputGroup>
      </form>
   )

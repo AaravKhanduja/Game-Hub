@@ -11,9 +11,10 @@ import SortSelector from './components/SortSelector';
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({genre: null, platform: null});
+  const [gameQuery, setGameQuery] = useState<GameQuery>({genre: null, platform: null, sortOrder: ''});
 
   const gridTemplate = useBreakpointValue({
     base: `"nav" "main"`, 
@@ -39,9 +40,9 @@ function App() {
       
 
       <GridItem area="main" >
-        <HStack>
+        <HStack paddingLeft='9'>
       <PlatformSelector onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})} />
-        <SortSelector/>
+        <SortSelector onSelectSort={(sortOrder) => setGameQuery({...gameQuery, sortOrder})}/>
       </HStack>
       <GameGrid gameQuery={gameQuery} />
       </GridItem>

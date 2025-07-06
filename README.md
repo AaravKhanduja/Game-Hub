@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-Here's the live application rawgio-game-hub.vercel.app
+Here's the live application https://rawgio-game-hub.vercel.app
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
